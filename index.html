@@ -12,6 +12,61 @@
                 alert(choice);
             }
             console.log(computerPlay);
+
+            function playRound(playerSelection, computerSelection) 
+            {   /* If player selects 'Rock'*/
+                if(playerSelection == 'Rock')
+                {
+                    if(computerSelection == 'Rock')
+                    {
+                        return alert('It\'s a tie!');
+                    }
+                    if(computerSelection == 'Paper')
+                    {
+                        return alert('You loose! Paper beats Rock');
+                    }
+                    if(computerSelection == 'Scissors')
+                    {
+                        return alert('You win! Rock beats Scissors');
+                    }
+                }
+
+                /* If player selects 'Scissors'*/
+                if(playerSelection == 'Scissors')
+                {
+                    if(computerSelection == 'Scissors')
+                    {
+                        return alert('It\'s a tie!');
+                    }
+                    if(computerSelection == 'Rock')
+                    {
+                        return alert('You loose! Rock beats Scissors');
+                    }
+                    if(computerSelection == 'Paper')
+                    {
+                        return alert('You win! Paper beats Rock');
+                    }
+                }
+
+                /* If player selects 'Paper'*/
+                if(playerSelection == 'Paper')
+                {
+                    if(computerSelection == 'Paper')
+                    {
+                        return alert('It\'s a tie!');
+                    }
+                    if(computerSelection == 'Scissors')
+                    {
+                        return alert('You loose! Scissors beats Paper');
+                    }
+                    if(computerSelection == 'Rock')
+                    {
+                        return alert('You win! Paper beats Rock');
+                    }
+                }
+            }
+
+
         </script>
     </body>
 </html>
