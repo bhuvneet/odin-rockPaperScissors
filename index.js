@@ -11,7 +11,8 @@ function computerPlay()
 
 // play one round of game
 function playRound(playerSelection, computerSelection) 
-{   /* If player selects 'Rock'*/
+{   
+    /* If player selects 'Rock'*/
     if(playerSelection == 'Rock')
     {
         if(computerSelection == 'Rock')
@@ -36,17 +37,17 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Scissors')
         {
-            result = alert('It\'s a tie!');
+            alert('It\'s a tie!');
             return 1;
         }
         if(computerSelection == 'Rock')
         {
-            result = alert('You loose! Rock beats Scissors');
+            alert('You loose! Rock beats Scissors');
             return 2;
         }
         if(computerSelection == 'Paper')
         {
-            result = alert('You win! Scissors beats Paper');
+            alert('You win! Scissors beats Paper');
             return 3;
         }
     }
@@ -56,17 +57,17 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Paper')
         {
-            result = alert('It\'s a tie!');
+            alert('It\'s a tie!');
             return 1;
         }
         if(computerSelection == 'Scissors')
         {
-            result = alert('You loose! Scissors beats Paper');
+            alert('You loose! Scissors beats Paper');
             return 2;
         }
         if(computerSelection == 'Rock')
         {
-            result = alert('You win! Paper beats Rock');
+            alert('You win! Paper beats Rock');
             return 3;
         }
     }
@@ -77,28 +78,18 @@ function playRound(playerSelection, computerSelection)
 }
 
 // play five rounds of game
-function game ()
+function game (result)
 {
     let playerScore     = 0;
     let computerScore   = 0;
     let winner          = 'winner';
     let looser          = 'looser';
-    let playerChoice    = '0';
-    let computerChoice  = '0';
-
-    playerChoice = prompt("Enter your choice");
-    // create 3 buttons for user to click
-
-    computerChoice = computerPlay();
     
-    result = playRound(playerChoice, computerChoice);
-
     // keep track of scores and winner/looser
     if (result == 1)
     {
         winner = 'none';
         looser = 'none';
-        return alert('winner: ' + winner + '\n' + 'looser: ' + looser + '.' + '\n' + 'score is: 0');
     }
     else if (result == 2)
     {
@@ -109,9 +100,7 @@ function game ()
         if(playerScore > 0) // decrement only if score is greater than 0.
         {
             playerScore--;
-        }
-        return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + computerScore
-        + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);                
+        }               
     }
     else if (result == 3)
     {
@@ -123,11 +112,41 @@ function game ()
         {
             computerScore--;
         }
-        
-        return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
-        + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + computerScore); 
     }
-
+    if (playerScore == 5)
+    {
+        if (winner == 'player')
+        {
+            return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
+            + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + computerScore);
+        }
+        else
+        {
+            return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + computerScore
+            + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
+        }
+    }
 }
 
-console.log(game());
+function choice (playerChoice)
+{
+    let computerChoice  = computerPlay();
+
+    let playerChoice1 = document.getElementById("choice1");    
+    playerChoice1.addEventListener("click", ()=>{
+        result = playRound(playerChoice1.innerText, computerChoice);
+        game(result);
+    }, {once: true} );
+
+    let playerChoice2 = document.getElementById("choice2");    
+    playerChoice2.addEventListener("click", ()=>{
+        result = playRound(playerChoice2.innerText, computerChoice);
+        game(result);
+    });
+
+    let playerChoice3 = document.getElementById("choice3");    
+    playerChoice3.addEventListener("click", ()=>{
+        result = playRound(playerChoice3.innerText, computerChoice);
+        game(result);
+    });
+}
