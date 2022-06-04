@@ -1,6 +1,8 @@
 
 let result = '0';
 
+/*Get elements by ID and addEventListeners to them
+invoke playRound() for each button clicked*/
 let rock = document.getElementById("rock");
 rock.addEventListener("click", function()
 {
@@ -159,6 +161,6 @@ function game (result)
             + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
         }
     }
-    
+
     return;
 }

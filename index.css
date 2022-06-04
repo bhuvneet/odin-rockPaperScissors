@@ -3,7 +3,8 @@ body
     background-color: rgb(192, 131, 192)
 }
 
-h1
+/*styling for heading*/
+h1  
 {
     font-style: italic;
     font-size: 50px;
@@ -13,6 +14,7 @@ h1
     margin-top: 40px;
 }
 
+/*styling for 3 buttons + images*/
 #buttons
 {   
     display: flex;
@@ -24,8 +26,8 @@ h1
     gap: 50px;
 }
 
+/*styling for 3 buttons*/
 button {
-    display: inline-block;
     width: 300px;
     height: 50px;
     padding-top: 5px;
