@@ -45,19 +45,19 @@ function playRound(playerSelection, computerSelection)
         {
             alert('It\'s a tie!')
             game(1);
-            return;
+            
         }
         else if(computerSelection == 'Paper')
         {
             alert('You loose! Paper beats Rock');
             game(2);
-            return;
+            
         }
         else if(computerSelection == 'Scissors')
         {
             alert('You win! Rock beats Scissors');
             game(3);
-            return;
+            
         }
     }
 
@@ -68,19 +68,19 @@ function playRound(playerSelection, computerSelection)
         {
             alert('It\'s a tie!');
             game(1);
-            return;
+            
         }
         else if(computerSelection == 'Rock')
         {
             alert('You loose! Rock beats Scissors');
             game(2);
-            return;
+            
         }
         else if(computerSelection == 'Paper')
         {
             alert('You win! Scissors beats Paper');
             game(3);
-            return;
+            
         }
     }
 
@@ -91,19 +91,19 @@ function playRound(playerSelection, computerSelection)
         {
             alert('It\'s a tie!');
             game(1);
-            return;
+            
         }
         else if(computerSelection == 'Scissors')
         {
             alert('You loose! Scissors beats Paper');
             game(2);
-            return;
+            
         }
         else if(computerSelection == 'Rock')
         {
             alert('You win! Paper beats Rock');
             game(3);
-            return;
+            
         }
     }
     else
@@ -115,6 +115,7 @@ function playRound(playerSelection, computerSelection)
 // play five rounds of game
 function game (result)
 {
+    console.log("running game()");
     let playerScore     = 0;
     let computerScore   = 0;
     let winner          = 'winner';
@@ -126,7 +127,7 @@ function game (result)
         winner = 'none';
         looser = 'none';
     }
-    else if (result == 2)
+    if (result == 2)
     {
         winner = 'computer';
         computerScore++;
@@ -137,7 +138,7 @@ function game (result)
             playerScore--;
         }               
     }
-    else if (result == 3)
+    if (result == 3)
     {
         winner = 'player';
         playerScore++;
@@ -148,19 +149,18 @@ function game (result)
             computerScore--;
         }
     }
-    if (playerScore == 5)
-    {
+    if (playerScore == 5 || computerScore == 5)
+    {   console.log("player/computer score = 5");
         if (winner == 'player')
         {
-            return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
+            alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
             + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + computerScore);
         }
         else
         {
-            return alert('winner: ' + winner + '\n' + 'winner\'s score: ' + computerScore
+            alert('winner: ' + winner + '\n' + 'winner\'s score: ' + computerScore
             + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
         }
     }
 
-    return;
 }
