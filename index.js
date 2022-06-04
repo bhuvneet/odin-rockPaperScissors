@@ -18,17 +18,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Rock')
         {
             result = alert('It\'s a tie!')
-            return 1;
+            return game(1);
         }
-        if(computerSelection == 'Paper')
+        else if(computerSelection == 'Paper')
         {
             result = alert('You loose! Paper beats Rock');
-            return 2;
+            return game(2);
         }
-        if(computerSelection == 'Scissors')
+        else if(computerSelection == 'Scissors')
         {
             result = alert('You win! Rock beats Scissors');
-            return 3;
+            return game(3);
         }
     }
 
@@ -38,17 +38,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Scissors')
         {
             alert('It\'s a tie!');
-            return 1;
+            return game(1);
         }
-        if(computerSelection == 'Rock')
+        else if(computerSelection == 'Rock')
         {
             alert('You loose! Rock beats Scissors');
-            return 2;
+            return game(2);
         }
-        if(computerSelection == 'Paper')
+        else if(computerSelection == 'Paper')
         {
             alert('You win! Scissors beats Paper');
-            return 3;
+            return game(3);
         }
     }
 
@@ -58,17 +58,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Paper')
         {
             alert('It\'s a tie!');
-            return 1;
+            return game(1);
         }
-        if(computerSelection == 'Scissors')
+        else if(computerSelection == 'Scissors')
         {
             alert('You loose! Scissors beats Paper');
-            return 2;
+            return game(2);
         }
-        if(computerSelection == 'Rock')
+        else if(computerSelection == 'Rock')
         {
             alert('You win! Paper beats Rock');
-            return 3;
+            return game(3);
         }
     }
     else
@@ -134,19 +134,16 @@ function choice (playerChoice)
 
     let playerChoice1 = document.getElementById("choice1");    
     playerChoice1.addEventListener("click", ()=>{
-        result = playRound(playerChoice1.innerText, computerChoice);
-        game(result);
-    }, {once: true} );
+        playRound(playerChoice1.innerText, computerChoice);
+    });
 
     let playerChoice2 = document.getElementById("choice2");    
     playerChoice2.addEventListener("click", ()=>{
-        result = playRound(playerChoice2.innerText, computerChoice);
-        game(result);
+        playRound(playerChoice2.innerText, computerChoice);
     });
 
     let playerChoice3 = document.getElementById("choice3");    
     playerChoice3.addEventListener("click", ()=>{
-        result = playRound(playerChoice3.innerText, computerChoice);
-        game(result);
+        playRound(playerChoice3.innerText, computerChoice);
     });
 }
