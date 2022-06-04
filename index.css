@@ -1,14 +1,15 @@
 body 
 {
-    background-color: purple;
+    background-color: rgb(192, 131, 192)
 }
 
 h1
 {
     font-style: italic;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
-    color: wheat;
+    color: darkmagenta;
+    font-weight: 900px;
     margin-top: 40px;
 }
 
@@ -17,36 +18,37 @@ h1
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-content: space-around;
-    align-items:flex-start;
+    align-content: center;
+    align-items:center;
     padding: 20px;
     gap: 50px;
 }
 
-#choice1, #choice2, #choice3 {
-    background-color: goldenrod;
-    color: brown;
+button {
+    display: inline-block;
     width: 300px;
     height: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
+    text-align: center;
+    background-color: goldenrod;
+    color: brown;
     font-family: cursive;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     font-style: italic;
     border: none;
     border-radius: 2px;
     margin-bottom: 2px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 img {
     display: flex;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     justify-content: center;
-    align-content: space-around;
+    align-content: center;
     align-items: center;
-    margin-left: 35%;
-    float: left;
+    margin-left: 30%;
 }
