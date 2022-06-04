@@ -1,6 +1,30 @@
 
 let result = '0';
 
+let rock = document.getElementById("rock");
+rock.addEventListener("click", function()
+{
+    let computerChoice  = computerPlay();
+    console.log(rock.textContent);
+    playRound(rock.textContent, computerChoice);
+})
+
+let paper = document.getElementById("paper");
+paper.addEventListener("click", function()
+{
+    let computerChoice  = computerPlay();
+    console.log(paper.textContent);
+    playRound(paper.textContent, computerChoice);
+})
+
+let scissors = document.getElementById("scissors");
+scissors.addEventListener("click", function()
+{
+    let computerChoice  = computerPlay();
+    console.log(scissors.textContent);
+    playRound(scissors.textContent, computerChoice);
+})
+
 // generate random choices for the computer  
 function computerPlay()
 {
@@ -17,18 +41,21 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Rock')
         {
-            result = alert('It\'s a tie!')
-            return game(1);
+            alert('It\'s a tie!')
+            game(1);
+            return;
         }
         else if(computerSelection == 'Paper')
         {
-            result = alert('You loose! Paper beats Rock');
-            return game(2);
+            alert('You loose! Paper beats Rock');
+            game(2);
+            return;
         }
         else if(computerSelection == 'Scissors')
         {
-            result = alert('You win! Rock beats Scissors');
-            return game(3);
+            alert('You win! Rock beats Scissors');
+            game(3);
+            return;
         }
     }
 
@@ -38,17 +65,20 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Scissors')
         {
             alert('It\'s a tie!');
-            return game(1);
+            game(1);
+            return;
         }
         else if(computerSelection == 'Rock')
         {
             alert('You loose! Rock beats Scissors');
-            return game(2);
+            game(2);
+            return;
         }
         else if(computerSelection == 'Paper')
         {
             alert('You win! Scissors beats Paper');
-            return game(3);
+            game(3);
+            return;
         }
     }
 
@@ -58,17 +88,20 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Paper')
         {
             alert('It\'s a tie!');
-            return game(1);
+            game(1);
+            return;
         }
         else if(computerSelection == 'Scissors')
         {
             alert('You loose! Scissors beats Paper');
-            return game(2);
+            game(2);
+            return;
         }
         else if(computerSelection == 'Rock')
         {
             alert('You win! Paper beats Rock');
-            return game(3);
+            game(3);
+            return;
         }
     }
     else
@@ -126,24 +159,6 @@ function game (result)
             + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
         }
     }
-}
-
-function choice (playerChoice)
-{
-    let computerChoice  = computerPlay();
-
-    let playerChoice1 = document.getElementById("choice1");    
-    playerChoice1.addEventListener("click", ()=>{
-        playRound(playerChoice1.innerText, computerChoice);
-    });
-
-    let playerChoice2 = document.getElementById("choice2");    
-    playerChoice2.addEventListener("click", ()=>{
-        playRound(playerChoice2.innerText, computerChoice);
-    });
-
-    let playerChoice3 = document.getElementById("choice3");    
-    playerChoice3.addEventListener("click", ()=>{
-        playRound(playerChoice3.innerText, computerChoice);
-    });
+    
+    return;
 }

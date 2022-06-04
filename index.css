@@ -5,6 +5,8 @@ body
 
 h1
 {
+    font-style: italic;
+    font-size: 40px;
     text-align: center;
     color: wheat;
     margin-top: 40px;
@@ -16,8 +18,7 @@ h1
     flex-flow: row nowrap;
     justify-content: center;
     align-content: space-around;
-    align-items:flex-start
-    flex-flow: row nowrap;
+    align-items:flex-start;
     padding: 20px;
     gap: 50px;
 }
@@ -44,6 +45,7 @@ img {
     width: 80px;
     height: 80px;
     justify-content: center;
+    align-content: space-around;
     align-items: center;
     margin-left: 35%;
     float: left;
