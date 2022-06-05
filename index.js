@@ -1,5 +1,8 @@
-
 let result = '0';
+let playerScore     = 0;
+let computerScore   = 0;
+let winner          = 'winner';
+let looser          = 'looser';
 
 /*Get elements by ID and addEventListeners to them
 invoke playRound() for each button clicked*/
@@ -7,7 +10,6 @@ let rock = document.getElementById("rock");
 rock.addEventListener("click", function()
 {
     let computerChoice  = computerPlay();
-    console.log(rock.textContent);
     playRound(rock.textContent, computerChoice);
 })
 
@@ -15,7 +17,6 @@ let paper = document.getElementById("paper");
 paper.addEventListener("click", function()
 {
     let computerChoice  = computerPlay();
-    console.log(paper.textContent);
     playRound(paper.textContent, computerChoice);
 })
 
@@ -23,7 +24,6 @@ let scissors = document.getElementById("scissors");
 scissors.addEventListener("click", function()
 {
     let computerChoice  = computerPlay();
-    console.log(scissors.textContent);
     playRound(scissors.textContent, computerChoice);
 })
 
@@ -44,20 +44,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Rock')
         {
             alert('It\'s a tie!')
-            game(1);
-            
+            game(1);  
         }
         else if(computerSelection == 'Paper')
         {
             alert('You loose! Paper beats Rock');
             game(2);
-            
         }
         else if(computerSelection == 'Scissors')
         {
             alert('You win! Rock beats Scissors');
             game(3);
-            
         }
     }
 
@@ -67,20 +64,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Scissors')
         {
             alert('It\'s a tie!');
-            game(1);
-            
+            game(1);   
         }
         else if(computerSelection == 'Rock')
         {
             alert('You loose! Rock beats Scissors');
-            game(2);
-            
+            game(2);         
         }
         else if(computerSelection == 'Paper')
         {
             alert('You win! Scissors beats Paper');
-            game(3);
-            
+            game(3);         
         }
     }
 
@@ -90,20 +84,17 @@ function playRound(playerSelection, computerSelection)
         if(computerSelection == 'Paper')
         {
             alert('It\'s a tie!');
-            game(1);
-            
+            game(1);           
         }
         else if(computerSelection == 'Scissors')
         {
             alert('You loose! Scissors beats Paper');
-            game(2);
-            
+            game(2);         
         }
         else if(computerSelection == 'Rock')
         {
             alert('You win! Paper beats Rock');
-            game(3);
-            
+            game(3);           
         }
     }
     else
@@ -115,19 +106,13 @@ function playRound(playerSelection, computerSelection)
 // play five rounds of game
 function game (result)
 {
-    console.log("running game()");
-    let playerScore     = 0;
-    let computerScore   = 0;
-    let winner          = 'winner';
-    let looser          = 'looser';
-    
     // keep track of scores and winner/looser
-    if (result == 1)
+    if (result === 1)
     {
         winner = 'none';
         looser = 'none';
     }
-    if (result == 2)
+    if (result === 2)
     {
         winner = 'computer';
         computerScore++;
@@ -138,7 +123,7 @@ function game (result)
             playerScore--;
         }               
     }
-    if (result == 3)
+    if (result === 3)
     {
         winner = 'player';
         playerScore++;
@@ -149,8 +134,8 @@ function game (result)
             computerScore--;
         }
     }
-    if (playerScore == 5 || computerScore == 5)
-    {   console.log("player/computer score = 5");
+    if (playerScore === 5 || computerScore === 5)
+    {
         if (winner == 'player')
         {
             alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
@@ -162,5 +147,4 @@ function game (result)
             + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
         }
     }
-
 }

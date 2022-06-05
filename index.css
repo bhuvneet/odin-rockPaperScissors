@@ -1,6 +1,6 @@
 body 
 {
-    background-color: rgb(192, 131, 192)
+    background-color: rgb(133, 91, 133)
 }
 
 /*styling for heading*/
@@ -9,9 +9,10 @@ h1
     font-style: italic;
     font-size: 50px;
     text-align: center;
-    color: darkmagenta;
+    color: goldenrod;
     font-weight: 900px;
     margin-top: 40px;
+    text-shadow: 2px 0 0 darkred;
 }
 
 /*styling for 3 buttons + images*/
@@ -34,7 +35,7 @@ button {
     padding-bottom: 5px;
     text-align: center;
     background-color: goldenrod;
-    color: brown;
+    color: darkred;
     font-family: cursive;
     font-size: 30px;
     font-weight: bold;
@@ -47,8 +48,8 @@ button {
 
 img {
     display: flex;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     justify-content: center;
     align-content: center;
     align-items: center;
