@@ -1,18 +1,19 @@
 body 
 {
-    background-color: rgb(133, 91, 133)
+    background-color: rgb(175, 111, 175);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-style: italic;
 }
 
 /*styling for heading*/
 h1  
 {
-    font-style: italic;
     font-size: 50px;
     text-align: center;
     color: goldenrod;
     font-weight: 900px;
     margin-top: 40px;
-    text-shadow: 2px 0 0 darkred;
+    text-shadow: 2px 0 0 black;
 }
 
 /*styling for 3 buttons + images*/
@@ -36,14 +37,34 @@ button {
     text-align: center;
     background-color: goldenrod;
     color: darkred;
-    font-family: cursive;
     font-size: 30px;
     font-weight: bold;
-    font-style: italic;
     border: none;
     border-radius: 2px;
     margin-bottom: 2px;
     margin-top: 30px;
+}
+
+#scores, #message, #round-message
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+    padding: 20px;
+    gap: 150px;
+    color: darkblue;
+    text-shadow: 2px 0 0 darkred;
+    font-size: 40px;
+    margin-top: 2%;
+}
+
+#round-message
+{
+    color: darkgreen;
+    text-shadow: 2px 0 0 goldenrod;
+    font-weight: bold;
 }
 
 img {

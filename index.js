@@ -1,8 +1,8 @@
 let result = '0';
 let playerScore     = 0;
 let computerScore   = 0;
-let winner          = 'winner';
-let looser          = 'looser';
+let winner          = 'Winner';
+let looser          = 'Looser';
 
 /*Get elements by ID and addEventListeners to them
 invoke playRound() for each button clicked*/
@@ -27,6 +27,12 @@ scissors.addEventListener("click", function()
     playRound(scissors.textContent, computerChoice);
 })
 
+let userScore = document.getElementById("player-score");
+let compScore = document.getElementById("computer-score");
+let message = document.getElementById("message");
+let roundMsg = document.getElementById("round-message");
+roundMsg.setAttribute('style', 'white-space: pre;');
+
 // generate random choices for the computer  
 function computerPlay()
 {
@@ -43,17 +49,17 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Rock')
         {
-            alert('It\'s a tie!')
+            message.textContent = 'It\'s a tie!';
             game(1);  
         }
         else if(computerSelection == 'Paper')
         {
-            alert('You loose! Paper beats Rock');
+            message.textContent = 'You loose! Paper beats Rock';
             game(2);
         }
         else if(computerSelection == 'Scissors')
         {
-            alert('You win! Rock beats Scissors');
+            message.textContent = 'You win! Rock beats Scissors';
             game(3);
         }
     }
@@ -63,17 +69,17 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Scissors')
         {
-            alert('It\'s a tie!');
+            message.textContent = 'It\'s a tie!';
             game(1);   
         }
         else if(computerSelection == 'Rock')
         {
-            alert('You loose! Rock beats Scissors');
+            message.textContent = 'You loose! Rock beats Scissors';
             game(2);         
         }
         else if(computerSelection == 'Paper')
         {
-            alert('You win! Scissors beats Paper');
+            message.textContent = 'You win! Scissors beats Paper';
             game(3);         
         }
     }
@@ -83,17 +89,17 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Paper')
         {
-            alert('It\'s a tie!');
+            message.textContent = 'It\'s a tie!';
             game(1);           
         }
         else if(computerSelection == 'Scissors')
         {
-            alert('You loose! Scissors beats Paper');
+            message.textContent = 'You loose! Scissors beats Paper';
             game(2);         
         }
         else if(computerSelection == 'Rock')
         {
-            alert('You win! Paper beats Rock');
+            message.textContent = 'You win! Paper beats Rock';
             game(3);           
         }
     }
@@ -109,15 +115,15 @@ function game (result)
     // keep track of scores and winner/looser
     if (result === 1)
     {
-        winner = 'none';
-        looser = 'none';
+        winner = 'None';
+        looser = 'None';
     }
     if (result === 2)
     {
-        winner = 'computer';
+        winner = 'Computer';
         computerScore++;
         
-        looser = 'player';
+        looser = 'Player';
         if(playerScore > 0) // decrement only if score is greater than 0.
         {
             playerScore--;
@@ -125,10 +131,10 @@ function game (result)
     }
     if (result === 3)
     {
-        winner = 'player';
+        winner = 'Player';
         playerScore++;
         
-        looser = 'computer';
+        looser = 'Computer';
         if (computerScore > 0) // decrement only if score is greater than 0.
         {
             computerScore--;
@@ -136,15 +142,18 @@ function game (result)
     }
     if (playerScore === 5 || computerScore === 5)
     {
-        if (winner == 'player')
+        if (winner == 'Player')
         {
-            alert('winner: ' + winner + '\n' + 'winner\'s score: ' + playerScore
-            + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + computerScore);
+            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Winner\'s score: ' + playerScore
+            + ' --- ' + 'Looser: ' + looser + ' --- ' + 'Looser\'s score: ' + computerScore;
         }
         else
         {
-            alert('winner: ' + winner + '\n' + 'winner\'s score: ' + computerScore
-            + '\n' + 'looser: ' + looser + '\n' + 'looser\'s score: ' + playerScore);
+            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Winner\'s score: ' + computerScore
+            + ' --- ' + 'Looser: ' + looser + '---' + 'Looser\'s score: ' + playerScore;                 
         }
     }
+
+    userScore.textContent = "Player's score: " + playerScore;
+    compScore.textContent = "Computer's score: " + computerScore;
 }
