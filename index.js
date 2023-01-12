@@ -3,6 +3,7 @@ let playerScore     = 0;
 let computerScore   = 0;
 let winner          = 'Winner';
 let looser          = 'Looser';
+let gameWon         = false;
 
 /*Get elements by ID and addEventListeners to them
 invoke playRound() for each button clicked*/
@@ -44,12 +45,21 @@ function computerPlay()
 // play one round of game
 function playRound(playerSelection, computerSelection) 
 {   
+    if (gameWon === true)
+    {
+        roundMsg.textContent = '';  // erase the winning msg
+        playerScore = 0;    // reset the scores
+        computerScore = 0;    
+        gameWon = false;
+    }
+
     /* If player selects 'Rock'*/
     if(playerSelection == 'Rock')
     {
         if(computerSelection == 'Rock')
         {
-            message.textContent = 'It\'s a tie!';
+            message.textContent = 'No Score! ' + playerSelection + ' ties with ' + computerSelection;
+
             game(1);  
         }
         else if(computerSelection == 'Paper')
@@ -69,7 +79,8 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Scissors')
         {
-            message.textContent = 'It\'s a tie!';
+            message.textContent = 'No Score! ' + playerSelection + ' ties with ' + computerSelection;
+
             game(1);   
         }
         else if(computerSelection == 'Rock')
@@ -89,7 +100,8 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection == 'Paper')
         {
-            message.textContent = 'It\'s a tie!';
+            message.textContent = 'No Score! ' + playerSelection + ' ties with ' + computerSelection;
+
             game(1);           
         }
         else if(computerSelection == 'Scissors')
@@ -142,15 +154,17 @@ function game (result)
     }
     if (playerScore === 5 || computerScore === 5)
     {
+        gameWon = true;
+
         if (winner == 'Player')
         {
-            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Winner\'s score: ' + playerScore
-            + ' --- ' + 'Looser: ' + looser + ' --- ' + 'Looser\'s score: ' + computerScore;
+            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Score: ' + playerScore
+            + '  ----  ' + 'Looser: ' + looser + ' --- ' + 'Score: ' + computerScore;
         }
         else
         {
-            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Winner\'s score: ' + computerScore
-            + ' --- ' + 'Looser: ' + looser + '---' + 'Looser\'s score: ' + playerScore;                 
+            roundMsg.textContent = 'Winner: ' + winner + ' --- ' + 'Score: ' + computerScore
+            + '  ----  ' + 'Looser: ' + looser + ' --- ' + 'Score: ' + playerScore;                 
         }
     }
 

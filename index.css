@@ -1,7 +1,7 @@
 body 
 {
     background-color: rgb(175, 111, 175);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
 }
 
@@ -62,8 +62,7 @@ button {
 
 #round-message
 {
-    color: darkgreen;
-    text-shadow: 2px 0 0 goldenrod;
+    color: gold;
     font-weight: bold;
 }
 
