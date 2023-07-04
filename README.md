@@ -1,5 +1,5 @@
 # odin-rockPaperScissors
-This project uses basic JavaScript to create the rock paper scissors game.
+This project uses native JavaScript to create the rock paper scissors game.
 
 Rock image reference: https://www.pngegg.com/en/search?q=boulder
 
